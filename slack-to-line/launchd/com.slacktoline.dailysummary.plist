@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.slacktoline.dailysummary</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <!-- 下のパスは実際の配置先に合わせて書き換えてください -->
+        <string>/path/to/slack-to-line/run.sh</string>
+    </array>
+
+    <!-- 毎日9:00に実行(お好みの時間に変更可) -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/path/to/slack-to-line/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/path/to/slack-to-line/launchd.err.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
